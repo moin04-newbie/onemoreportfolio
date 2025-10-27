@@ -18,13 +18,13 @@ export default function CTASection() {
               whileHover={{ x: 10, scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => {
-                window.location.href = "/contact"
+                window.location.href = "/"
               }}
               className="flex items-center gap-2 text-4xl md:text-6xl font-light italic cursor-pointer"
             >
-              Let's Chat
+              Let's Build Something Together
               <motion.span animate={{ x: [0, 10, 0] }} transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}>
-                →
+                
               </motion.span>
             </motion.button>
           </div>

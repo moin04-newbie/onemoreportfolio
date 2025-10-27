@@ -1,12 +1,18 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
+import { useDevMode } from "./dev-mode-provider"
 
 interface PageTransitionProps {
   isTransitioning: boolean
 }
 
 export default function PageTransition({ isTransitioning }: PageTransitionProps) {
+  const { isDev } = useDevMode()
+  
+  // Skip animations in development mode
+  if (isDev) return null
+  
   return (
     <AnimatePresence>
       {isTransitioning && (

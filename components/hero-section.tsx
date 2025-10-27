@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 
-const heroWords = ["We", "do", "many", "things", "very", "well."]
+const heroWords = ["I'm Moin Sayyad", "Web & App", "Developer", "UI‑UX Explorer"]
 
 export default function HeroSection() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
@@ -18,8 +18,8 @@ export default function HeroSection() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative pt-20">
-      <div className="text-center max-w-6xl mx-auto px-8">
-        <div className="text-[8vw] md:text-[6vw] font-light leading-tight mb-12">
+      <div className="text-center max-w-6xl mx-auto px-10">
+        <div className="text-[8vw] md:text-[6vw] font-light leading-tight mb-40">
           {heroWords.map((word, index) => (
             <motion.span
               key={index}
@@ -44,13 +44,13 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 2 }}
-          className="flex justify-center"
+          className="flex justify-center mt-25"
         >
           <motion.button
             whileHover={{
               scale: 1.05,
               boxShadow: "0 0 30px rgba(0,0,0,0.3)",
-            }}
+            }}  
             whileTap={{ scale: 0.95 }}
             onClick={() => {
               window.location.href = "/work"

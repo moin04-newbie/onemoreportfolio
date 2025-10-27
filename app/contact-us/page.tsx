@@ -21,7 +21,7 @@ export default function ContactUs() {
             transition={{ duration: 1 }}
             className="text-6xl md:text-8xl font-light mb-16"
           >
-            CONTACT US
+            CONNECT WITH ME
           </motion.h1>
 
           <div className="grid md:grid-cols-2 gap-16">
@@ -32,15 +32,9 @@ export default function ContactUs() {
             >
               <h2 className="text-2xl font-light mb-8">Get in Touch</h2>
               <div className="space-y-4 text-lg">
-                <p>hello@reformcollective.com</p>
-                <p>+1 (555) 123-4567</p>
-                <p>
-                  123 Creative Street
-                  <br />
-                  Design District
-                  <br />
-                  New York, NY 10001
-                </p>
+                <p>moinsayyad529@gmail.com</p>
+                <p>+91 7249592867</p>
+                <p>Pune, Maharashtra, India</p>
               </div>
             </motion.div>
 
@@ -56,7 +50,7 @@ export default function ContactUs() {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 className="flex items-center gap-4 text-3xl font-light"
               >
-                Let's Chat
+                Let's Connect
                 <motion.span animate={{ x: [0, 10, 0] }} transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}>
                   →
                 </motion.span>

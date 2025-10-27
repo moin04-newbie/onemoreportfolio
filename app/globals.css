@@ -5,6 +5,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
   }
 
   body {
@@ -12,11 +13,37 @@
       "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    cursor: none;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  body.dev-mode {
+    cursor: auto !important;
   }
 
   * {
     box-sizing: border-box;
+  }
+
+  /* Smooth scrolling optimizations */
+  * {
+    scroll-behavior: smooth;
+  }
+
+  /* Performance optimizations */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -106,4 +133,37 @@
   to {
     clip-path: inset(0 0% 0 0);
   }
+}
+
+/* Enhanced scroll performance */
+.scroll-container {
+  contain: layout style paint;
+  will-change: transform;
+}
+
+/* Smooth scroll utilities */
+.smooth-scroll-container {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* GPU acceleration for smooth animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimized transitions */
+.optimized-transition {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+/* Intersection observer optimizations */
+.intersection-optimized {
+  contain: layout style paint;
+  will-change: transform, opacity;
 }

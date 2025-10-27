@@ -6,8 +6,8 @@ import Header from "@/components/header"
 import CursorSpotlight from "@/components/cursor-spotlight"
 import ScrollToTop from "@/components/scroll-to-top"
 
-const services = ["BRANDING", "WEB DESIGN", "UX / PRODUCT DESIGN", "DEVELOPMENT"]
-const budgets = ["$25-30K", "$30-50K", "$50-75K", "$100K +"]
+const services = ["Website Development", "Web Design", "UX / Product Design", "Mobile App Development"]
+const budgets = ["20-30K", "30-50K", "50-75K", "100K +"]
 
 export default function ContactPage() {
   const [selectedServices, setSelectedServices] = useState<string[]>([])
@@ -32,6 +32,33 @@ export default function ContactPage() {
   }
 
   const handleSubmit = async () => {
+    // Validate required fields before submission
+    if (!formData.name.trim()) {
+      setSubmitStatus('error')
+      setErrorMessage('Please enter your name.')
+      return
+    }
+    if (!formData.email.trim()) {
+      setSubmitStatus('error')
+      setErrorMessage('Please enter your email address.')
+      return
+    }
+    if (!formData.project.trim()) {
+      setSubmitStatus('error')
+      setErrorMessage('Please describe your project.')
+      return
+    }
+    if (selectedServices.length === 0) {
+      setSubmitStatus('error')
+      setErrorMessage('Please select at least one service.')
+      return
+    }
+    if (!selectedBudget) {
+      setSubmitStatus('error')
+      setErrorMessage('Please select a budget range.')
+      return
+    }
+
     setIsSubmitting(true)
     setSubmitStatus('idle')
     setErrorMessage("")
@@ -43,7 +70,10 @@ export default function ContactPage() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...formData,
+          name: formData.name.trim(),
+          company: formData.company.trim(),
+          email: formData.email.trim(),
+          project: formData.project.trim(),
           selectedServices,
           selectedBudget,
         }),
@@ -51,7 +81,7 @@ export default function ContactPage() {
 
       const result = await response.json()
 
-      if (result.success) {
+      if (response.ok && result.success) {
         setSubmitStatus('success')
         // Reset form
         setFormData({ name: "", company: "", email: "", project: "" })
@@ -60,9 +90,10 @@ export default function ContactPage() {
         setCurrentStep(1)
       } else {
         setSubmitStatus('error')
-        setErrorMessage(result.message || 'Something went wrong. Please try again.')
+        setErrorMessage(result.message || result.errors?.join(', ') || 'Something went wrong. Please try again.')
       }
     } catch (error) {
+      console.error('Form submission error:', error)
       setSubmitStatus('error')
       setErrorMessage('Network error. Please check your connection and try again.')
     } finally {
@@ -110,8 +141,17 @@ export default function ContactPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="mb-8 p-6 bg-red-50 border border-red-200 rounded-lg"
               >
-                <h3 className="text-xl font-light text-red-800 mb-2">Oops!</h3>
+                <h3 className="text-xl font-light text-red-800 mb-2">Oops! Validation failed</h3>
                 <p className="text-red-700">{errorMessage}</p>
+                <button
+                  onClick={() => {
+                    setSubmitStatus('idle')
+                    setErrorMessage("")
+                  }}
+                  className="mt-2 text-sm text-red-600 underline hover:no-underline"
+                >
+                  Dismiss
+                </button>
               </motion.div>
             )}
 
@@ -205,10 +245,15 @@ export default function ContactPage() {
                   >
                     <input
                       type="text"
-                      placeholder="YOUR NAME"
+                      placeholder="YOUR NAME *"
                       value={formData.name}
                       onChange={(e) => handleInputChange("name", e.target.value)}
-                      className="w-full bg-transparent border-b-2 border-black pb-3 text-lg focus:outline-none focus:border-blue-600 transition-colors placeholder-gray-400"
+                      className={`w-full bg-transparent border-b-2 pb-3 text-lg focus:outline-none transition-colors placeholder-gray-400 ${
+                        submitStatus === 'error' && !formData.name.trim() 
+                          ? 'border-red-500' 
+                          : 'border-black focus:border-blue-600'
+                      }`}
+                      required
                     />
                   </motion.div>
 
@@ -233,10 +278,15 @@ export default function ContactPage() {
                   >
                     <input
                       type="email"
-                      placeholder="EMAIL"
+                      placeholder="EMAIL *"
                       value={formData.email}
                       onChange={(e) => handleInputChange("email", e.target.value)}
-                      className="w-full bg-transparent border-b-2 border-black pb-3 text-lg focus:outline-none focus:border-blue-600 transition-colors placeholder-gray-400"
+                      className={`w-full bg-transparent border-b-2 pb-3 text-lg focus:outline-none transition-colors placeholder-gray-400 ${
+                        submitStatus === 'error' && !formData.email.trim() 
+                          ? 'border-red-500' 
+                          : 'border-black focus:border-blue-600'
+                      }`}
+                      required
                     />
                   </motion.div>
 
@@ -246,11 +296,16 @@ export default function ContactPage() {
                     transition={{ delay: 0.4 }}
                   >
                     <textarea
-                      placeholder="BRIEFLY TELL US ABOUT YOUR PROJECT"
+                      placeholder="BRIEFLY TELL US ABOUT YOUR PROJECT *"
                       rows={4}
                       value={formData.project}
                       onChange={(e) => handleInputChange("project", e.target.value)}
-                      className="w-full bg-transparent border-b-2 border-black pb-3 text-lg focus:outline-none focus:border-blue-600 transition-colors resize-none placeholder-gray-400"
+                      className={`w-full bg-transparent border-b-2 pb-3 text-lg focus:outline-none transition-colors resize-none placeholder-gray-400 ${
+                        submitStatus === 'error' && !formData.project.trim() 
+                          ? 'border-red-500' 
+                          : 'border-black focus:border-blue-600'
+                      }`}
+                      required
                     />
                   </motion.div>
 

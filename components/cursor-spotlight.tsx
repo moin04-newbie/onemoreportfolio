@@ -2,28 +2,28 @@
 
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
+import { useDevMode } from "./dev-mode-provider"
 
 export default function CursorSpotlight() {
+  const { isDev } = useDevMode()
+  // Completely skip rendering in dev mode for faster reloads
+  if (isDev) return null
+  // ...existing code for prod...
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isVisible, setIsVisible] = useState(false)
-
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
       setIsVisible(true)
     }
-
     const handleMouseLeave = () => setIsVisible(false)
-
     window.addEventListener("mousemove", updateMousePosition)
     document.addEventListener("mouseleave", handleMouseLeave)
-
     return () => {
       window.removeEventListener("mousemove", updateMousePosition)
       document.removeEventListener("mouseleave", handleMouseLeave)
     }
   }, [])
-
   return (
     <motion.div
       className="fixed top-0 left-0 w-96 h-96 pointer-events-none z-50 mix-blend-difference"

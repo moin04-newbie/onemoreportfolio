@@ -11,16 +11,16 @@ import Navigation from "@/components/navigation"
 import SocialLinks from "@/components/social-links"
 
 const projectData: Record<string, any> = {
-  "brand-identity": {
-    title: "Hospital Website Redesign",
-    subtitle: "MODERN HEALTHCARE EXPERIENCE",
+  "white-lotus-portal": {
+    title: "White Lotus Portal",
+    subtitle: "Portal for Hospital",
     description:
-      "CREATING A BOLD, INNOVATIVE BRAND IDENTITY FOR A CUTTING-EDGE TECH STARTUP THAT DISRUPTS THE TRADITIONAL INDUSTRY LANDSCAPE.",
-    services: ["WEB DESIGN","UX/UI DESIGN","HEALTHCARE","RESPONSIVE DESIGN"],
+      "Portal for Hospital",
+    services: ["HEALTHCARE", "WEB DESIGN", "WEB DEVELOPMENT"],
     year: "2024",
-    client: "Tech Startup",
+    client: "Portal for Hospital",
     challenge:
-      "The existing hospital website lacked clarity, accessibility, and mobile responsiveness. Patients found it hard to book appointments, access services, or locate departments. The brand identity didn’t reflect the hospital’s advanced medical capabilities and compassionate care.",
+      "The existing hospital website lacked clarity, accessibility, and mobile responsiveness. Patients found it hard to book appointments, access services, or locate departments. The brand identity didn't reflect the hospital's advanced medical capabilities and compassionate care.",
     solution:
       "We designed a clean, calming interface with a strong focus on accessibility (WCAG-compliant), streamlined appointment booking, and clear service categories. Our solution emphasized trust, warmth, and professionalism through color, typography, and UX flow.",
     results: [
@@ -28,116 +28,41 @@ const projectData: Record<string, any> = {
       "🏥 Reduced walk-in congestion by 40% ",
       "👩‍⚕️ Positive feedback from over 2,000 patients and staff",
     ],
-    images: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=500&width=700",
-    ],
-    color: "from-blue-500 to-purple-600",
-    textColor: "text-blue-900",
-    url: "https://white-lotus-portal.vercel.app/",
-  },
-  "web-design": {
-    title: "Web Design",
-    subtitle: "Cooking Website Platform",
-    description:
-      "CRAFTING A VISUALLY DELICIOUS RECIPE WEBSITE FOR FOOD ENTHUSIASTS TO DISCOVER, COOK, AND SHARE RECIPES ACROSS CULTURES AND CUISINES.",
-    services: ["WEB DESIGN", "UI/UX", "RESPONSIVE DESIGN", "DEVELOPMENT"],
-    year: "2024",
-    client: "Fashion Brand",
-    challenge:
-      "Foodies loved the brand, but the original platform didn’t match the energy of the recipes it shared. The UI was cluttered, loading was slow, and the UX didn’t encourage browsing or saving recipes. The lack of community features made users feel disconnected.",
-    solution:
-      "We served up a modern, clean, and bold UI with mouth-watering imagery, dark/light toggle for night cooks, and smooth filtering based on diet, region, and difficulty.",
-    results: [
-      "300% increase in online sales",
-      "180% improvement in user engagement",
-      "Award-winning design recognition",
-    ],
-    images: ["/placeholder.svg?height=600&width=800", "/placeholder.svg?height=400&width=600"],
-    color: "from-pink-400 to-rose-500",
-    textColor: "text-pink-900",
-    url: "https://hearth-whisk-alchemy.vercel.app/",
-  },
-  "ecommerce-platform": {
-    title: "E-commerce Platform",
-    subtitle: "STREETWEAR & URBAN FASHION STORE",
-    description:
-      "BUILT A FUNCTIONAL AND MINIMALIST ECOMMERCE PLATFORM FROM SCRATCH FOR A MODERN STREETWEAR BRAND THAT CATERS TO GEN Z SHOPPERS.",
-    services: ["E-COMMERCE", "WEB DEVELOPMENT", "UX DESIGN", "PAYMENT INTEGRATION"],
-    year: "2023",
-    client: "Retail Chain",
-    challenge:
-      "We had to design and build a complete e-commerce experience from scratch, with limited resources. The platform had to be mobile-first, visually sleek, and equipped with core commerce features — all without relying on third-party platforms like Shopify or WooCommerce.",
-    solution:
-      "We architected a login-based shopping system using PHP and MySQL, focused on speed and clarity.",
-    results: ["600% increase in online revenue", "150% improvement in conversion rate", "99.9% uptime reliability"],
-    images: ["/placeholder.svg?height=600&width=800", "/placeholder.svg?height=400&width=600"],
-    color: "from-green-500 to-teal-500",
-    textColor: "text-green-900",
-    url: "https://ethicallifeworld.com/",
-  },
-  nervana: {
-    title: "NERVANA",
-    subtitle: "THE PAIN FREE ERA",
-    description:
-      "FEEL BETTER IN MINUTES WITH NERVANA'S ALL-NATURAL PAIN RELIEF PATCHES. EFFECTIVE, REUSABLE, AND POWERED BY YOUR BODY'S OWN ENERGY.",
-    services: ["ART DIRECTION", "BRANDING", "WEB DESIGN", "WEB DEVELOPMENT"],
-    year: "2024",
-    client: "Health Tech",
-    challenge:
-      "The existing hospital website lacked clarity, accessibility, and mobile responsiveness. Patients found it hard to book appointments, access services, or locate departments. The brand identity didn’t reflect the hospital’s advanced medical capabilities and compassionate care.",
-    solution:
-      "We designed a clean, calming interface with a strong focus on accessibility (WCAG-compliant), streamlined appointment booking, and clear service categories. Our solution emphasized trust, warmth, and professionalism through color, typography, and UX flow.",
-    results: [
-      "📈 300% increase in online appointment booking",
-      "🏥 Reduced walk-in congestion by 40% ",
-      "👩‍⚕️ Positive feedback from over 2,000 patients and staff",
-    ],
-    images: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=500&width=700",
-    ],
+    images: ["/Hospital .png"],
     color: "from-orange-400 to-pink-500",
     textColor: "text-orange-900",
     url: "https://white-lotus-portal.vercel.app/",
   },
-  campfire: {
-    title: "CAMPFIRE",
-    subtitle: "OUTDOOR ADVENTURES",
-    description: "CONNECTING PEOPLE WITH NATURE THROUGH CURATED OUTDOOR EXPERIENCES AND SUSTAINABLE ADVENTURE GEAR.",
-    services: ["ART DIRECTION", "BRANDING", "WEB DESIGN", "DEVELOPMENT"],
+  "SupplySnap": {
+    title: "SupplySnap",
+    subtitle: "B2B Ecommerce Platform for Suppliers",
+    description: "A comprehensive B2B ecommerce platform connecting suppliers with businesses, featuring advanced procurement tools, bulk ordering capabilities, and streamlined supply chain management.",
+    services: ["B2B", "ECOMMERCE", "DEVELOPMENT"],
     year: "2024",
-    client: "Adventure Company",
-    challenge: "Build a brand that captures the spirit of adventure while promoting environmental responsibility.",
-    solution:
-      "Created an earthy, authentic brand identity with interactive digital experiences that inspire outdoor exploration.",
-    results: ["200% increase in bookings", "85% customer retention rate", "Featured in outdoor magazines"],
-    images: ["/placeholder.svg?height=600&width=800", "/placeholder.svg?height=400&width=600"],
-    color: "from-green-400 to-orange-500",
-    textColor: "text-green-900",
-    url: "https://webyulelog.com/log/campfire?r=0",
+    client: "Supply Chain Solutions Inc.",
+    challenge: "Traditional B2B procurement processes were inefficient, with complex ordering systems, lack of real-time inventory visibility, and fragmented supplier relationships. Businesses needed a unified platform to streamline their supply chain operations.",
+    solution: "We developed a comprehensive B2B ecommerce platform with advanced procurement features, real-time inventory management, bulk ordering capabilities, and integrated supplier management tools. The platform includes automated workflows, custom pricing tiers, and comprehensive analytics.",
+    results: ["40% reduction in procurement time", "60% increase in order accuracy", "200+ active suppliers onboarded", "85% customer satisfaction rate"],
+    images: ["/SupplySnap.png"],
+    color: "",
+    textColor: "text-gray-900",
+    url: "https://e-commerce-web-application-3pzu.vercel.app/",
   },
-  runway: {
-    title: "RUNWAY",
-    subtitle: "FASHION FORWARD",
-    description: "NEXT-GENERATION FASHION MARKETPLACE CONNECTING EMERGING DESIGNERS WITH FASHION-FORWARD CONSUMERS.",
-    services: ["ART DIRECTION", "BRANDING", "WEB DESIGN", "WEB DEVELOPMENT"],
+  "DevHub": {
+    title: "DevHub",
+    subtitle: "Comprehensive Developer Platform & Community",
+    description: "An all-in-one developer platform featuring collaborative workspaces, knowledge repositories, global community networks, and AI-powered analytics. Built for students, developers, and tech enthusiasts to learn, collaborate, and grow together.",
+    services: ["DEVELOPER", "NETWORK", "COMMUNITIES"],
     year: "2023",
-    client: "Fashion Platform",
-    challenge:
-      "Create a platform that elevates emerging fashion designers while providing an exceptional shopping experience.",
-    solution:
-      "We designed a sophisticated marketplace with editorial-quality presentation and seamless user experience.",
-    results: ["500+ designer partnerships", "300% growth in user base", "Industry recognition awards"],
-    images: ["/placeholder.svg?height=600&width=800", "/placeholder.svg?height=400&width=600"],
+    client: "Tech Education Foundation",
+    challenge: "Developers and students needed a unified platform that combined learning resources, collaboration tools, and community features. Existing solutions were fragmented, making it difficult to manage projects, access knowledge, and connect with peers in one place.",
+    solution: "We created a comprehensive platform with four core modules: Interactive Home with live stats and trending projects, Collaborative Workspaces with real-time editing and task management, Central Repository with AI-powered search and recommendations, Global Community with hackathons and competitions, and Analytics Dashboard with skill tracking and personalized learning paths.",
+    results: ["50,000+ active developers", "200+ hackathons hosted", "95% user engagement rate", "40% faster project completion"],
+    images: ["/DevHub.png"],
     color: "from-gray-600 to-gray-800",
     textColor: "text-gray-900",
-    url: "https://www.salonheleenhulsmann.nl/",
-  },
-  
- 
+    url: "",
+  }, 
 }
 
 export default function ProjectPage() {
@@ -218,18 +143,24 @@ export default function ProjectPage() {
                   className="relative"
                 >
                   <div
-                    className={`aspect-[4/3] bg-gradient-to-br ${project.color} rounded-2xl relative overflow-hidden flex items-center justify-center`}
+                    className={`aspect-[4/3] bg-gradient-to-br ${project.color || 'from-gray-100 to-gray-200'} rounded-2xl relative overflow-hidden flex items-center justify-center`}
                   >
-                    {/* Spline 3D Model */}
-                    <iframe
-                      src="https://my.spline.design/nexbotrobotcharacterconcept-H5q1HQWiqwlgHnJh9FY791Tp/"
-                      frameBorder="0"
-                      width="100%"
-                      height="100%"
-                      allow="autoplay; fullscreen"
-                      style={{ border: 'none', width: '100%', height: '100%' }}
-                      title="3D Spline Model"
-                    ></iframe>
+                    {/* Project Image */}
+                    {project.images && project.images.length > 0 ? (
+                      <img
+                        src={project.images[0]}
+                        alt={project.title}
+                        className="w-full h-full object-cover rounded-2xl"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="text-center text-gray-600">
+                        <div className="text-6xl mb-4">🚀</div>
+                        <h3 className="text-2xl font-light mb-2">{project.title}</h3>
+                        <p className="text-lg opacity-80">{project.subtitle}</p>
+                      </div>
+                    )}
+                    
                     {/* Decorative elements */}
                     <div className="absolute top-8 right-8">
                       <svg width="60" height="60" viewBox="0 0 60 60" className="text-white/20">
